@@ -49,10 +49,24 @@ source env/bin/activate  # En Windows usa `env\Scripts\activate`
    npm run dev
 
 ##Parte 2: Pruebas sobre el Front y el Back
-1. **Podras acceder al front dandole click al siguiente link "http://localhost:5173/LogIn" o si tienes ese puerto ocupado deberas de identificar el link que te arroja el proyecto, esto normalmente en la power shell**
+1. **Podras acceder al front dandole click al siguiente link "http://localhost:5173/LogIn** o si tienes ese puerto ocupado deberas de identificar el link que te arroja el proyecto, esto normalmente en la power shell**
 2. **Podras acceder al back y mirar sus modificaciones copiando y pegando el siguiente link en un buscador como google "http://127.0.0.1:8000/admin/"** no olvides ingresar con tus datos de super usuario y ten en cuenta que si tienes ocupado el puerto anteriormente mencionado deberas de ver en que puerto se esta ejecutando el proyecto**
 
-##Parte 3: Robot de descarga de documentos
+##Parte 3: Robot de descarga de documentos.
+1. **Construir este proyecto ingresando por medio de tu power shell a la carpeta del proyecto**
+2. ```bash
+   cd <ubicacion_en_donde_guardaremos_el_proyecto_robot>
+   docker-compose --profile robot up
+3. **Ya construido el contenedor podremos identificar ver la descarga del documento pedido de la siguiente forma**
+   -  ingresa a docker desktop
+   -  ve al apartado de volumenes que podras encontrar en la parte de la izquierda
+   -  una ves adentro podras identificar un volume denomidado roboto_downloas
+   -  En este podras guardar en tu maquina el documento a partir del que se encuentra en este contenedor
+   -  el documento lo podras encontrar en tu maquina el el lugar guardado
+4. Para detener este contenedor podras darle en el power shell control + c
+5. Una vez detenido el contenedor pordras borrar los documentos desde el docker desktop
+   
+   
 
 
    
