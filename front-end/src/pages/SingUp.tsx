@@ -1,11 +1,13 @@
-import { ChangeEvent, FormEvent, useState } from "react";
 import { postNewUser } from "../api/user.api.ts";
-import { DataInterface } from "../Interfaces/DataInterface";
 
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const SingUp = () => {
+  const notifyError = () =>
+    toast.error("Asegúrate de diligenciar todos los campos");
+  const notifySuccess = () => toast.success("Usuario registrado exitosamente");
   const navigate = useNavigate();
   const {
     register,
@@ -13,32 +15,22 @@ const SingUp = () => {
     formState: { errors },
   } = useForm();
 
-  const [formData, setFormData] = useState<DataInterface>({
-    fullName: "",
-    age: "",
-    gender: "",
-    cedula: "",
-    cellPhone: "",
-    email: "",
-  });
-
   const onSubmit = handleSubmit(async (data) => {
-    const resp = await postNewUser(data);
-    console.log(resp);
+    try {
+      const resp = await postNewUser(data);
+      console.log(resp);
+      notifySuccess();
+      navigate("/LogIn"); // Redirige a otra página tras el éxito (ajusta la ruta según sea necesario)
+    } catch (error) {
+      console.error(error);
+      notifyError();
+    }
   });
-  const handleChanges = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
 
   return (
     <div className="card">
       <div className="card-body">
+        <Toaster position="top-center" reverseOrder={false} />
         <form onSubmit={onSubmit}>
           <div className="mb-3">
             <label className="form-label">Nombre completo</label>
