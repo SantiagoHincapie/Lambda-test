@@ -1,0 +1,15 @@
+services:
+  robot:
+    build: ./robot
+    profiles: [robot]
+    container_name: robot
+    restart: always
+    environment:
+      - APP_NAME=MyRobotDane
+    volumes:
+      - type: volume
+        source: downloads
+        target: /app/downloads
+
+volumes:
+  downloads:

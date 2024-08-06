@@ -1,10 +1,12 @@
-import { useEffect } from "react";
-import { DataInterface } from "../Interfaces/DataInterface";
-import { getByUser } from "../api/user.api.ts";
+import { useNavigate } from "react-router-dom";
 
 const Home = (props: any) => {
   const { fullName, age, gender, cedula, cellPhone, email } = props;
   console.log(fullName, age, gender, cedula, cellPhone, email);
+  const navigate = useNavigate();
+  const closetSesion = () => {
+    navigate("/LogIn");
+  };
 
   return (
     <div
@@ -26,8 +28,8 @@ const Home = (props: any) => {
         <br />
         <h4> Correo: {email}</h4>
         <br />
-        <button type="button" className="btn btn-info">
-          Descargar archivo
+        <button type="button" className="btn btn-info" onClick={closetSesion}>
+          Cerrar sesion
         </button>
       </div>
     </div>

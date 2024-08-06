@@ -1,0 +1,5 @@
+# SQLAlchemy==1.4.31
+# marshmallow==3.14.1
+# marshmallow-sqlalchemy==0.28.0
+requests==2.32.3
+schedule==1.2.2

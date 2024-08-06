@@ -1,0 +1,18 @@
+docker-compose up
+docker compose --profile redis up
+docker-compose up --build 
+docker-compose down
+docker-compose up -d
+docker-compose up --build -d
+docker-compose logs flask
+docker docker-compose top flask
+docker-compose top nginx
+docker-compose stop
+docker-compose rm
+docker-compose exec flask bash
+
+docker exec -it scheduler-redis-1 redis-cli
+docker compose --profile robot up
+docker-compose --profile robot up --build 
+
+λ docker logs robot --tail 10
