@@ -1,7 +1,7 @@
 # Lambda-test
 # Proyecto Fullstack con React y Django Rest Framework
 
-Esta carpeta contiene dos proyectos: un frontend desarrollado con React y un backend desarrollado con Django Rest Framework. Sigue los pasos a continuación para configurar y ejecutar ambos proyectos.
+Esta carpeta contiene tres proyectos: un frontend desarrollado con React , un backend desarrollado con Django Rest Framework, ademas un contenedor que fue construydo con python y flask para realizar la descarga de un documento con un delay de 10 segundo. Sigue los pasos a continuación para configurar y ejecutar ambos proyectos.
 
 ## Requisitos
 
