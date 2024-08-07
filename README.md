@@ -65,6 +65,39 @@ source env/bin/activate  # En Windows usa `env\Scripts\activate`
    -  el documento lo podras encontrar en tu maquina el el lugar guardado
 4. Para detener este contenedor podras darle en el power shell control + c
 5. Una vez detenido el contenedor pordras borrar los documentos desde el docker desktop
+6. Aca un poco mas del contenedor
+   Project structure:
+
+```
+.
+├── robot ──├
+            ├──Dockerfile
+            ├──main.py
+            ├──requirements.txt
+├── README.md
+├── compose.yaml
+```
+
+[_compose.yaml_](compose.yaml)
+
+```
+services:
+  robot:
+    build: ./robot
+    profiles: [robot]
+    container_name: robot
+    restart: always
+    environment:
+      - APP_NAME=MyRobotDane
+    volumes:
+      - type: volume
+        source: downloads
+        target: /app/downloads
+
+volumes:
+  downloads:
+
+```
    
    
 
